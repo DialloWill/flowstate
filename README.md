@@ -7,7 +7,7 @@
 A modern web application for managing song lyrics across all genres. Built with Flask and SQLAlchemy, FlowState helps artists organize their creative process from draft to final recording.
 
 ![FlowState Dashboard](https://via.placeholder.com/800x400/1a1a2e/eee?text=FlowState+Dashboard)
-*We'll replace this placeholder with a real screenshot tomorrow*
+
 
 ## ✨ Features
 
