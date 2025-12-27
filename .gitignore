@@ -1,0 +1,11 @@
+# Python virtual environment
+venv/
+env/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Database (we'll create fresh on deployment)
+*.db

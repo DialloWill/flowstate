@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}Add Song - FlowState{% endblock %}
+
+{% block content %}
+
+<!-- Form Container -->
+<div class="max-w-2xl mx-auto">
+    
+    <!-- Back Button -->
+    <a href="/" class="inline-flex items-center text-gray-400 hover:text-flow-purple transition-colors duration-300 mb-6 group">
+        <i data-lucide="arrow-left" class="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform"></i>
+        <span>Back to Dashboard</span>
+    </a>
+    
+    <!-- Form Card -->
+    <div class="glass-card rounded-2xl p-8 border border-flow-purple/20">
+        
+        <!-- Form Header -->
+        <div class="mb-8">
+            <div class="flex items-center space-x-4 mb-3">
+                <div class="bg-gradient-to-r from-flow-purple to-flow-cyan p-3 rounded-xl">
+                    <i data-lucide="mic-2" class="w-8 h-8 text-white"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl font-bold bg-gradient-to-r from-flow-purple to-flow-cyan bg-clip-text text-transparent">
+                        Create New Song
+                    </h1>
+                    <p class="text-gray-400 text-sm mt-1">Express yourself through lyrics</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Form Start -->
+        <form method="POST" class="space-y-6">
+            
+            <!-- Song Title Input -->
+            <div>
+                <label for="title" class="block text-sm font-semibold text-gray-300 mb-2">
+                    Song Title
+                    </label>
+                <input 
+                    type="text" 
+                    id="title" 
+                    name="title" 
+                    required
+                    placeholder="Enter your song title..."
+                    class="w-full px-4 py-3 bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-flow-purple focus:ring-2 focus:ring-flow-purple/50 focus:bg-gray-900/70 transition-all duration-300"
+                >
+            </div>
+
+            <!-- Status Dropdown -->
+            <div>
+                <label for="status" class="block text-sm font-semibold text-gray-300 mb-2">
+                    Status
+                </label>
+                <select 
+                    id="status" 
+                    name="status" 
+                    required
+                    class="w-full px-4 py-3 bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl text-white focus:outline-none focus:border-flow-purple focus:ring-2 focus:ring-flow-purple/50 focus:bg-gray-900/70 transition-all duration-300 cursor-pointer"
+                >
+                    <option value="draft" selected>Draft</option>
+                    <option value="recording">Recording</option>
+                    <option value="complete">Complete</option>
+                </select>
+            </div>
+            <!-- AI-Assisted Toggle -->
+            <div class="flex items-center justify-between p-4 bg-gray-900/30 backdrop-blur-sm border border-gray-700/50 rounded-xl">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-flow-cyan/20 p-2 rounded-lg">
+                        <i data-lucide="cpu" class="w-5 h-5 text-flow-cyan"></i>
+                    </div>
+                    <div>
+                        <label for="ai_assisted" class="text-sm font-semibold text-gray-300 cursor-pointer">
+                            AI-Assisted
+                        </label>
+                        <p class="text-xs text-gray-500 mt-0.5">Used AI tools for writing/editing</p>
+                    </div>
+                </div>
+                
+                <!-- Toggle Switch -->
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" id="ai_assisted" name="ai_assisted" class="sr-only peer">
+                    <div class="w-11 h-6 bg-gray-700 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-flow-cyan/30 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-flow-cyan"></div>
+                </label>
+            </div>
+            <!-- Action Buttons -->
+            <div class="flex items-center space-x-4 pt-4">
+                
+                <!-- Submit Button (Hypergloss Gradient) -->
+                <button 
+                    type="submit"
+                    class="flex-1 bg-gradient-to-r from-flow-purple to-flow-cyan text-white font-semibold py-3 px-6 rounded-xl hover:shadow-lg hover:shadow-flow-purple/50 hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
+                >
+                    <i data-lucide="save" class="w-5 h-5"></i>
+                    <span>Create Song</span>
+                </button>
+                
+                <!-- Cancel Button (Subtle Gray) -->
+                <a 
+                    href="/"
+                    class="flex-1 bg-gray-800/50 backdrop-blur-sm text-gray-300 font-semibold py-3 px-6 rounded-xl border border-gray-700/50 hover:bg-gray-800/70 hover:border-gray-600 transition-all duration-300 flex items-center justify-center space-x-2"
+                >
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                    <span>Cancel</span>
+                </a>
+                
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

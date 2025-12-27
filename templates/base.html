@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}FlowState{% endblock %}</title>
+    
+    <!-- Tailwind CSS (Modern framework) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Dark Mode Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'flow-purple': '#8b5cf6',
+                        'flow-blue': '#3b82f6',
+                        'flow-cyan': '#06b6d4',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Lucide Icons (Modern icon set) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Fonts: Inter (Modern sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS for additional effects -->
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            min-height: 100vh;
+        }
+        
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+        
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-100">
+    
+    <!-- Modern Navigation Bar -->
+    <nav class="glass-card sticky top-0 z-50 mb-8">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo/Brand -->
+                <a href="/" class="flex items-center space-x-3 text-2xl font-bold">
+                    <i data-lucide="mic-2" class="text-flow-purple"></i>
+                    <span class="bg-gradient-to-r from-flow-purple to-flow-cyan bg-clip-text text-transparent">
+                        FlowState
+                    </span>
+                    </a>
+                
+                <!-- Navigation Links -->
+                <div class="flex items-center space-x-6">
+                    <a href="/" class="text-gray-300 hover:text-flow-purple transition-colors duration-300 flex items-center space-x-2">
+                        <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+                        <span>Dashboard</span>
+                    </a>
+                    
+                    <a href="/song/new" class="btn-glow bg-gradient-to-r from-flow-purple to-flow-blue text-white px-6 py-2.5 rounded-lg font-semibold flex items-center space-x-2">
+                        <i data-lucide="plus" class="w-5 h-5"></i>
+                        <span>New Song</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Main Content Container -->
+    <div class="container mx-auto px-6 max-w-7xl">
+        
+        <!-- Flash Messages (Success/Error notifications) -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+
+        {% if messages %}
+                <div class="space-y-4 mb-8 fade-in">
+                    {% for category, message in messages %}
+                        <div class="glass-card rounded-xl p-4 border-l-4 
+                                    {% if category == 'success' %}border-green-500 bg-green-500/10
+                                    {% elif category == 'error' %}border-red-500 bg-red-500/10
+                                    {% else %}border-flow-blue bg-flow-blue/10{% endif %}
+                                    flex items-center space-x-3">
+                            <i data-lucide="{% if category == 'success' %}check-circle
+                                           {% elif category == 'error' %}alert-circle
+                                           {% else %}info{% endif %}" 
+                               class="{% if category == 'success' %}text-green-400
+                                      {% elif category == 'error' %}text-red-400
+                                      {% else %}text-flow-blue{% endif %} w-6 h-6"></i>
+                            <span class="text-lg">{{ message }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
+        <!-- Content Block - Pages insert their content here -->
+        <div class="fade-in">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
