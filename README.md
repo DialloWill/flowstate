@@ -1,4 +1,8 @@
-# 🎵 FlowState - Song Lyrics Management Application
+# 🎵 FlowState Lyrics Manager
+
+   **Live Demo:** https://flowstate-1xcb.onrender.com
+
+   ![FlowState Dashboard](screenshot.png)
 
 A modern web application for managing song lyrics across all genres. Built with Flask and SQLAlchemy, FlowState helps artists organize their creative process from draft to final recording.
 
