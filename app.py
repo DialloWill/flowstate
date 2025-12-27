@@ -17,7 +17,8 @@ import os
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'flowstate-secret-key-change-later'
 base_dir = os.path.abspath(os.path.dirname(__file__))
-app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{os.path.join(base_dir, "flowstate.db")}'
+# Database configuration - uses PostgreSQL on Render, SQLite locally
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///flowstate.db').replace('postgres://', 'postgresql://')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Initialize the database with the app
