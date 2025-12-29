@@ -1,6 +1,6 @@
 # 🎵 FlowState Lyrics Manager
 
-   **Live Demo:** https://flowstate-1xcb.onrender.com
+**🎥 [Watch Video Demo](https://youtu.be/athd7N1YsQE)** | **🌐 [Live Demo](https://flowstate-1xcb.onrender.com)**
 
    ![FlowState Dashboard](screenshot.png)
 
