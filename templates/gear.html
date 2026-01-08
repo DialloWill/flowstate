@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}Recommended Gear - FlowState™{% endblock %}
+
+{% block content %}
+<div class="gear-page">
+    <header class="gear-header">
+        <h1>🎵 Recommended Gear for Creatives</h1>
+        <p class="header-subtitle">Level up your recording and production setup with equipment trusted by musicians, producers, and content creators</p>
+        <p class="header-note"><em>💡 All products carefully selected based on quality, value, and creator feedback</em></p>
+    </header>
+
+    {% for category_key, category in categories.items() %}
+    <section class="gear-category" id="{{ category_key }}">
+        <div class="category-header">
+            <h2>{{ category.title }}</h2>
+            <p class="category-description">{{ category.description }}</p>
+        </div>
+        
+        <div class="product-grid">
+            {% for product in category.products %}
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="{{ product.image }}" alt="{{ product.name }}" loading="lazy">
+                </div>
+                
+                <div class="product-info">
+                    <h3 class="product-name">{{ product.name }}</h3>
+                    <p class="product-description">{{ product.description }}</p>
+                    <p class="product-price">{{ product.price }}</p>
+                    
+                    <div class="product-links">
+                        {% if product.amazon_link and product.amazon_link != '#' %}
+                        <a href="{{ product.amazon_link }}" 
+                           target="_blank" 
+                           rel="nofollow noopener"
+                           class="buy-button amazon">
+                            View on Amazon
+                        </a>
+                        {% endif %}
+                        
+                        {% if product.get('aliexpress_link') and product.aliexpress_link != '#' %}
+                        <a href="{{ product.aliexpress_link }}" 
+                           target="_blank" 
+                           rel="nofollow noopener"
+                           class="buy-button aliexpress">
+                            View on AliExpress
+                        </a>
+                        {% endif %}
+                        
+                        {% if product.get('plugin_boutique_link') and product.plugin_boutique_link != '#' %}
+                        <a href="{{ product.plugin_boutique_link }}" 
+                           target="_blank" 
+                           rel="nofollow noopener"
+                           class="buy-button plugin">
+                            View at Plugin Boutique
+                        </a>
+                        {% endif %}
+                        
+                        {% if product.amazon_link == '#' and product.get('aliexpress_link') == '#' %}
+                        <p class="coming-soon">🔄 Affiliate links coming soon</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endfor %}
+
+    <section class="affiliate-disclosure-section">
+        <div class="disclosure-box">
+            <h3>📢 Affiliate Disclosure</h3>
+            <p>FlowState™ participates in Amazon Associates, AliExpress Portals, and other affiliate programs. This means we may earn a commission from qualifying purchases made through links on this page, at no additional cost to you.</p>
+            
+            <p>We only recommend products we believe will genuinely help creatives improve their craft. All product selections are based on quality, value, and user reviews — not just commission rates.</p>
+            
+            <p><strong>Your support helps us:</strong></p>
+            <ul>
+                <li>Keep FlowState free for all users</li>
+                <li>Continue developing new features</li>
+                <li>Maintain and improve our servers</li>
+                <li>Create helpful content for creatives</li>
+            </ul>
+            
+            <p class="disclosure-thanks">Thank you for supporting FlowState! 🙏</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to Create?</h2>
+        <p>Organize your lyrics and creative work with FlowState</p>
+        <a href="/register" class="cta-button">Start Using FlowState Free</a>
+    </section>
+</div>
+{% endblock %}

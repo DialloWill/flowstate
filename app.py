@@ -47,6 +47,102 @@ def index():
     # Render the dashboard template and pass the songs to it
     return render_template('index.html', songs=all_songs)
 
+# Route: About Page (Public - No Login Required)
+@app.route('/about')
+def about():
+    """Display the About page with FlowState info and demo access."""
+    return render_template('about.html')
+
+# Route: Gear Page (Public - Affiliate Product Recommendations)
+@app.route('/gear')
+def gear():
+    """
+    Display recommended gear for creatives.
+
+    Shows curated music production equipment across multiple categories:
+    microphones, headphones, audio interfaces, accessories, and software.
+    Includes placeholder affiliate links (to be updated after program approvals).
+
+    Returns:
+        Rendered gear.html template with product categories and data
+        """
+    
+    # Product categories with placeholder data
+    # Affiliate links will be added after Amazon, AliExpress, etc. approvals
+    gear_categories = {
+        'microphones': {
+            'title': 'Microphones',
+            'description': 'Professional mics for recording vocals, instruments and podcasts',
+            'products': [
+                {
+                    'name': 'Blue Yeti USB Microphone',
+                    'description': 'Professional USB mic with multiple pattern modes',
+                    'price': '$99.99',
+                    'amazon_lin': '#',
+                    'image': 'https://via.placeholder.com/300x200?text=Blue+Yeti'
+                },
+                {
+                    'name': 'Audio-Technica AT2020',
+                    'description': 'Studio condenser microphone for vocals',
+                    'price': '$99.00',
+                    'amazon_link': '#',
+                    'image': 'https://via.placeholder.com/300x200?text=AT2020'
+                },
+                {
+                    'name': 'Shure SM58',
+                    'description': 'Industry standard dynamic microphone',
+                    'price': '$99.00',
+                    'amazon_link': '#',
+                    'image': 'https://via.placeholder.com/300x200?text=SM58'
+
+                }
+            ]           
+        },
+        'headphones': {
+            'title': 'Headphones',
+            'description': 'Studio monitors and headphones for mixing and monitoring',
+            'products': [
+                {
+                    'name': 'Audio-Technica ATH-M50x',
+                    'description': 'Professional studio monitor headphones',
+                    'price': '$149.00',
+                    'amazon_link': '#',
+                    'image': 'https://via.placeholder.com/300x200?text=ATH-M50x'
+                },
+                {
+                    'name': 'Sony MDR-7506',
+                    'description': 'Industry standard studio headphones',
+                    'price': '$99.99',
+                    'amazon_link': '#',
+                    'image': 'https://via.placeholder.com/300x200?text=MDR-7506'
+                }
+            ]
+        },
+        'interfaces': {
+            'title': 'Audio Interfaces',
+            'description': 'Professional audio interfaces for recording',
+            'products': [
+                {
+                    'name': 'Focusrite Scarlett 2i2',
+                    'description': 'USB audio interface with 2 inputs',
+                    'price': '$179.99',
+                    'amazon_link': '#',
+                    'image': 'https://via.placeholder.com/300x200?text=Scarlett+2i2'
+                },
+                {
+                    'name': 'PreSonus AudioBox USB 96',
+                    'description': 'Budget-friendly 2x2 interface',
+                    'price': '$99.95',
+                    'amazon_link': '#',
+                    'image': 'https://via.placeholder.com/300x200?text=AudioBox'
+                }
+            ]
+        }
+    }
+    
+    return render_template('gear.html', categories=gear_categories)
+    
+
 # Route 2: Add a new song
 @app.route('/song/new', methods=['GET', 'POST'])
 def add_song():

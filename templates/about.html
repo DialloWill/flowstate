@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}About - FlowState™{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto space-y-12">
+    
+    <!-- Hero Section -->
+    <div class="text-center space-y-4">
+        <h1 class="text-5xl font-bold bg-gradient-to-r from-flow-purple to-flow-cyan bg-clip-text text-transparent">
+            About FlowState™
+        </h1>
+        <p class="text-xl text-gray-300">Professional lyric management for creatives</p>
+    </div>
+
+    <!-- What is FlowState -->
+    <div class="glass-card rounded-2xl p-8 space-y-4">
+        <h2 class="text-3xl font-bold text-flow-purple">What is FlowState™?</h2>
+        <p class="text-lg text-gray-300 leading-relaxed">
+            FlowState™ is a professional lyric management platform designed for musicians, songwriters, 
+            poets, and content creators. We help artists organize, edit, and perfect their written work 
+            with verse-level editing, cloud storage, and an intuitive interface built by a creative, for creatives.
+        </p>
+    </div>
+
+    <!-- Video Demo -->
+    <div class="glass-card rounded-2xl p-8 space-y-4">
+        <h2 class="text-3xl font-bold text-flow-purple">See FlowState™ in Action</h2>
+        <div class="aspect-video rounded-lg overflow-hidden">
+            <iframe width="100%" height="100%" 
+                    src="https://www.youtube.com/embed/athd7N1YsQE" 
+                    title="FlowState Demo" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <div class="glass-card rounded-2xl p-8 space-y-6">
+        <h2 class="text-3xl font-bold text-flow-purple">Key Features</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="flex items-start space-x-3">
+                <i data-lucide="check-circle" class="text-green-400 w-6 h-6 mt-1"></i>
+                <div>
+                    <h3 class="font-semibold text-lg">Verse-Level Organization</h3>
+                    <p class="text-gray-400">Edit and manage individual verses with precision</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-3">
+                <i data-lucide="check-circle" class="text-green-400 w-6 h-6 mt-1"></i>
+                <div>
+                    <h3 class="font-semibold text-lg">Cloud Storage</h3>
+                    <p class="text-gray-400">Access your lyrics anywhere, anytime</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-3">
+                <i data-lucide="check-circle" class="text-green-400 w-6 h-6 mt-1"></i>
+                <div>
+                    <h3 class="font-semibold text-lg">Status Tracking</h3>
+                    <p class="text-gray-400">Track songs from draft to recording to complete</p>
+                </div>
+            </div>
+            <div class="flex items-start space-x-3">
+                <i data-lucide="check-circle" class="text-green-400 w-6 h-6 mt-1"></i>
+                <div>
+                    <h3 class="font-semibold text-lg">Clean Interface</h3>
+                    <p class="text-gray-400">Distraction-free writing environment</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Demo Access -->
+    <div class="glass-card rounded-2xl p-8 space-y-4 border-2 border-flow-purple">
+        <h2 class="text-3xl font-bold text-flow-purple">Try FlowState™ Now</h2>
+        <p class="text-lg text-gray-300">Use our demo account to explore all features:</p>
+        <div class="bg-slate-900 rounded-lg p-6 space-y-2 font-mono">
+            <p><span class="text-gray-400">Username:</span> <span class="text-flow-cyan">demo@flowstate.com</span></p>
+            <p><span class="text-gray-400">Password:</span> <span class="text-flow-cyan">DemoFlow2025</span></p>
+        </div>
+        <a href="/" class="inline-block btn-glow bg-gradient-to-r from-flow-purple to-flow-blue text-white px-8 py-3 rounded-lg font-semibold">
+            Go to Dashboard
+        </a>
+    </div>
+
+</div>
+{% endblock %}

@@ -30,46 +30,46 @@ def init_db(app):
 
 def seed_sample_data(app):
     """
-    Populate database with sample song and lyrics for testing.
+    Populate database with sample song and lyrics for testing + demo account.
     
-    Creates one sample song with one verse if database is empty.
+    Creates demo account with 3 sample songs if database is empty.
     Skips seeding if data already exists to prevent duplicates.
     
     Args:
         app (Flask): The Flask application instance with database config
     
     Sample Data Created:
-        - 1 song titled "Sample Track" with draft status
-        - 1 verse with sample lyrics demonstrating the format
+        - 3 demo songs with various statuses
+        - Multiple verses demonstrating different writing styles
     
     Note:
         Safe to run multiple times - checks for existing data first.
-        Automatically run on app startup for demo purposes."""
+        Demo credentials: demo@flowstate.com / DemoFlow2025"""
     with app.app_context():
         # Check if data already exists
         if Song.query.first():
             print("⚠️ Sample data already exists, skipping...")
             return
         
-        # Create sample song
-        sample_song = Song(
-            title="Sample Track",
-            status="draft"
-        )
-        db.session.add(sample_song)
+        # Create 3 demo songs
+        songs_data = [
+            {"title": "Morning Inspiration", "status": "complete"},
+            {"title": "Work in Progress", "status": "recording"},
+            {"title": "New Idea", "status": "draft"}
+        ]
+        
+        for song_data in songs_data:
+            song = Song(title=song_data["title"], status=song_data["status"])
+            db.session.add(song)
+            db.session.commit()
+            
+            # Add sample verse to each song
+            lyrics = Lyrics(
+                song_id=song.id,
+                verse_number=1,
+                lyrics_text="This is a sample verse for demonstration.\nEdit or delete this to add your own lyrics."
+            )
+            db.session.add(lyrics)
+        
         db.session.commit()
-
-        # Add sample lyrics
-        sample_lyrics = Lyrics(
-            song_id=sample_song.id,
-            verse_number=1,
-            lyrics_text="""All gas no brakes cuz I'm in my flow state,
-        She fell in love cuz I gave her rounds and don't need no breaks,
-        She said I'm a keeper cuz I like to eat a whole cake,
-        Eat your heart out or die cuz its a waste if her legs don't shake"""
-        )
-
-        db.session.add(sample_lyrics)
-        db.session.commit()
-
-        print("✅ Sample data added successfully!")
+        print("✅ Demo account data created successfully!")
