@@ -60,15 +60,15 @@ def gear():
     Display recommended gear for creatives.
 
     Shows curated music production equipment across multiple categories:
-    microphones, headphones, audio interfaces, accessories, and software.
-    Includes placeholder affiliate links (to be updated after program approvals).
+    microphones, headphones, audio interfaces.
+    Includes Amazon Associates affiliate links (approved Jan 2026).
 
     Returns:
         Rendered gear.html template with product categories and data
-        """
+    """
     
-    # Product categories with placeholder data
-    # Affiliate links will be added after Amazon, AliExpress, etc. approvals
+    # Product categories with Amazon affiliate links
+    # Amazon Associates Store ID: flowstate20-20
     gear_categories = {
         'microphones': {
             'title': 'Microphones',
@@ -78,23 +78,22 @@ def gear():
                     'name': 'Blue Yeti USB Microphone',
                     'description': 'Professional USB mic with multiple pattern modes',
                     'price': '$99.99',
-                    'amazon_lin': '#',
+                    'amazon_link': 'https://amzn.to/4aM7JwK',
                     'image': 'https://via.placeholder.com/300x200?text=Blue+Yeti'
                 },
                 {
                     'name': 'Audio-Technica AT2020',
                     'description': 'Studio condenser microphone for vocals',
                     'price': '$99.00',
-                    'amazon_link': '#',
+                    'amazon_link': 'https://amzn.to/4syTaTF',
                     'image': 'https://via.placeholder.com/300x200?text=AT2020'
                 },
                 {
                     'name': 'Shure SM58',
                     'description': 'Industry standard dynamic microphone',
                     'price': '$99.00',
-                    'amazon_link': '#',
+                    'amazon_link': 'https://amzn.to/45ECHn1',
                     'image': 'https://via.placeholder.com/300x200?text=SM58'
-
                 }
             ]           
         },
@@ -106,14 +105,14 @@ def gear():
                     'name': 'Audio-Technica ATH-M50x',
                     'description': 'Professional studio monitor headphones',
                     'price': '$149.00',
-                    'amazon_link': '#',
+                    'amazon_link': 'https://amzn.to/4537kSU',
                     'image': 'https://via.placeholder.com/300x200?text=ATH-M50x'
                 },
                 {
                     'name': 'Sony MDR-7506',
                     'description': 'Industry standard studio headphones',
                     'price': '$99.99',
-                    'amazon_link': '#',
+                    'amazon_link': 'https://amzn.to/3LsNjP4',
                     'image': 'https://via.placeholder.com/300x200?text=MDR-7506'
                 }
             ]
@@ -126,14 +125,14 @@ def gear():
                     'name': 'Focusrite Scarlett 2i2',
                     'description': 'USB audio interface with 2 inputs',
                     'price': '$179.99',
-                    'amazon_link': '#',
+                    'amazon_link': 'https://amzn.to/4jAaUdk',
                     'image': 'https://via.placeholder.com/300x200?text=Scarlett+2i2'
                 },
                 {
                     'name': 'PreSonus AudioBox USB 96',
                     'description': 'Budget-friendly 2x2 interface',
                     'price': '$99.95',
-                    'amazon_link': '#',
+                    'amazon_link': 'https://amzn.to/4aOB6i1',
                     'image': 'https://via.placeholder.com/300x200?text=AudioBox'
                 }
             ]
