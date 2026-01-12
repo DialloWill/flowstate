@@ -78,7 +78,9 @@ def gear():
                     'name': 'Blue Yeti USB Microphone',
                     'description': 'Professional USB mic with multiple pattern modes',
                     'price': '$99.99',
+                    'budget_price': '$23.90',
                     'amazon_link': 'https://amzn.to/4aM7JwK',
+                    'aliexpress_link': 'https://s.click.aliexpress.com/e/_c3chNoyJ',
                     'image': 'https://m.media-amazon.com/images/I/61EI01i738L._AC_SY300_SX300_QL70_FMwebp_.jpg'
                 },
                 {
