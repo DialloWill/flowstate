@@ -79,21 +79,21 @@ def gear():
                     'description': 'Professional USB mic with multiple pattern modes',
                     'price': '$99.99',
                     'amazon_link': 'https://amzn.to/4aM7JwK',
-                    'image': 'https://via.placeholder.com/300x200?text=Blue+Yeti'
+                    'image': 'https://m.media-amazon.com/images/I/61EI01i738L._AC_SY300_SX300_QL70_FMwebp_.jpg'
                 },
                 {
                     'name': 'Audio-Technica AT2020',
                     'description': 'Studio condenser microphone for vocals',
                     'price': '$99.00',
                     'amazon_link': 'https://amzn.to/4syTaTF',
-                    'image': 'https://via.placeholder.com/300x200?text=AT2020'
+                    'image': 'https://m.media-amazon.com/images/I/61IcVHpNWWL._AC_SY300_SX300_QL70_FMwebp_.jpg'
                 },
                 {
                     'name': 'Shure SM58',
                     'description': 'Industry standard dynamic microphone',
                     'price': '$99.00',
                     'amazon_link': 'https://amzn.to/45ECHn1',
-                    'image': 'https://via.placeholder.com/300x200?text=SM58'
+                    'image': 'https://m.media-amazon.com/images/I/5158IqcAkhL._AC_SY300_SX300_QL70_FMwebp_.jpg'
                 }
             ]           
         },
@@ -106,14 +106,14 @@ def gear():
                     'description': 'Professional studio monitor headphones',
                     'price': '$149.00',
                     'amazon_link': 'https://amzn.to/4537kSU',
-                    'image': 'https://via.placeholder.com/300x200?text=ATH-M50x'
+                    'image': 'https://m.media-amazon.com/images/I/910yRE6EFhL._AC_SY300_SX300_QL70_FMwebp_.jpg'
                 },
                 {
                     'name': 'Sony MDR-7506',
                     'description': 'Industry standard studio headphones',
                     'price': '$99.99',
                     'amazon_link': 'https://amzn.to/3LsNjP4',
-                    'image': 'https://via.placeholder.com/300x200?text=MDR-7506'
+                    'image': 'https://m.media-amazon.com/images/I/51F-Ok9xuzL._AC_SX569_.jpg'
                 }
             ]
         },
@@ -126,14 +126,14 @@ def gear():
                     'description': 'USB audio interface with 2 inputs',
                     'price': '$179.99',
                     'amazon_link': 'https://amzn.to/4jAaUdk',
-                    'image': 'https://via.placeholder.com/300x200?text=Scarlett+2i2'
+                    'image': 'https://m.media-amazon.com/images/I/613veRuWtmL._AC_SX522_.jpg'
                 },
                 {
                     'name': 'PreSonus AudioBox USB 96',
                     'description': 'Budget-friendly 2x2 interface',
                     'price': '$99.95',
                     'amazon_link': 'https://amzn.to/4aOB6i1',
-                    'image': 'https://via.placeholder.com/300x200?text=AudioBox'
+                    'image': 'https://m.media-amazon.com/images/I/51Ord5hItbL._AC_SX522_.jpg'
                 }
             ]
         }
