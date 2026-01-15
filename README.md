@@ -18,11 +18,9 @@ A modern web application for managing song lyrics and creative writing. Built wi
 
 ### Public Pages
 - **About Page** (`/about`) - Learn about FlowState™ with embedded demo video and feature showcase
-- **Gear Recommendations** (`/gear`) - Curated music production equipment for creatives (affiliate-supported)
 
-### Analytics & Support
+### Analytics
 - **Google Analytics** - Track visitor engagement and site performance (GA4)
-- **Affiliate Disclosure** - Transparent affiliate program participation to support free access
 
 ### Design
 - **Modern UI** - Glassmorphic design with Tailwind CSS
@@ -72,7 +70,7 @@ The demo account includes 3 sample songs with pre-written verses to explore all 
 ```
 flowstate/
 │
-├── app.py                      # Main Flask application with 9 routes
+├── app.py                      # Main Flask application
 ├── instance/
 │   └── flowstate.db            # SQLite database (local dev only)
 ├── requirements.txt            # Python dependencies
@@ -83,17 +81,15 @@ flowstate/
 │   └── db_setup.py             # Database initialization and demo data seeding
 │
 ├── templates/
-│   ├── base.html               # Base template with navigation, footer, GA4
+│   ├── base.html               # Base template with navigation and footer
 │   ├── index.html              # Dashboard - view all songs
 │   ├── about.html              # Public about page with demo video
-│   ├── gear.html               # Gear recommendations (affiliate products)
 │   ├── add_song.html           # Create new song form
 │   ├── view_song.html          # View single song with all verses
 │   ├── add_lyrics.html         # Add new verse form
 │   └── edit_lyrics.html        # Edit existing verse form
 │
-└── static/
-    └── gear.css                # Custom styling for gear page
+└── static/                     # Static assets (if needed)
 ```
 
 ---
@@ -162,7 +158,6 @@ The app will be available at `http://127.0.0.1:5000`
 
 ### Exploring Public Pages
 - **About:** Click "About" in navbar to learn about FlowState™
-- **Gear:** Click "Gear" in navbar to browse recommended music production equipment
 
 ---
 
@@ -201,21 +196,6 @@ The app will be available at `http://127.0.0.1:5000`
 - [ ] Collaboration features for multiple artists
 - [ ] User authentication and multi-user support
 - [ ] Mobile app version (iOS/Android)
-- [ ] Real affiliate links integration (Amazon, AliExpress, ShareASale)
-
----
-
-## 💰 Affiliate Disclosure
-
-FlowState™ participates in Amazon Associates, AliExpress Portals, and other affiliate programs. We may earn commissions from qualifying purchases made through links on our Gear page, at no additional cost to you.
-
-**Your support helps us:**
-- Keep FlowState™ free for all users
-- Continue developing new features
-- Maintain and improve our servers
-- Create helpful content for creatives
-
-All product recommendations are based on quality, value, and user reviews—not just commission rates.
 
 ---
 
@@ -223,7 +203,7 @@ All product recommendations are based on quality, value, and user reviews—not 
 
 **Diallo Williams**
 - Master's in IT Management (3.94 GPA) - DeVry University
-- Bachelor's in Software Development (3.53 GPA) - DeVry University
+- Bachelor's in Software Development (3.57 GPA) - DeVry University
 - Hip-Hop Artist & Software Developer
 - **GitHub:** [github.com/DialloWill](https://github.com/DialloWill)
 - **LinkedIn:** [linkedin.com/in/diallowilliams](https://linkedin.com/in/diallowilliams)
